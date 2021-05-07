@@ -9,7 +9,7 @@ const publicDirectoryPath = path.join(__dirname, './public')
 const viewsPath = path.join(__dirname, './view')
 const partialsPath = path.join(__dirname, './partials')
 
-const port= process.env.PORT || 4000
+const port= process.env.PORT || 4200
 
 app.set('view engine', 'hbs')
 app.set('views', viewsPath)
