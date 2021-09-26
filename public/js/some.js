@@ -28,8 +28,8 @@ fetch('/matches/extra').then((response) => {
         var ss= data.fdata
         for(var i=0; i<ss.length; i++) {
             z= z + "<h5 id='cj'>Match " + (i+1) + "</h5> <p></p>"
-            z= z + "<a href='/scorecard/extra/" + ss[i][3] + "' id='cv' class='nn'>" + ss[i][0] + " Vs " + ss[i][1] + "</a> <span class='badge rounded-pill bg-primary'><- Click for Details</span> <p></p>"
-            z= z + "<a id='cv'> Winner is " + ss[i][2] + "</a> <p></p>"
+            z= z + "<a href='/scorecard/extra/" + (i+1) + "' id='cv' class='nn'>" + ss[i].t1 + " Vs " + ss[i].t2 + "</a> <span class='badge rounded-pill bg-primary'><- Click for Details</span> <p></p>"
+            z= z + "<a id='cv'> Winner is " + ss[i].w + "</a> <p></p>"
             console.log(ss[i][3])
         }
         q5.innerHTML=z

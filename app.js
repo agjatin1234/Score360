@@ -79,48 +79,39 @@ app.get('/scorecard/extra',(req,res) => {
     })      
 })
 
-
-app.get('/player',(req,res) => {
-    res.render('player',{ 
+app.get('/news',(req,res) => {
+    res.render('news',{ 
         creator:'Jatin',
         loop:5
     })
 })
-app.get('/player/stats',(req,res)=>{
-    if (!req.query.name) {
-        return res.send({ 
-            error: 'You must provide a name'
-        })
-    }
-    api.playerId(req.query.name, (error, pId) => {
-        if (error) {
-            return res.send({ error })
-        }
-    api.playerInfo(pId,(error,pdata)=>{
-        if (error) {
-            return res.send({ error })
-        }
-        res.send({
-              pdata
-        })
-    })
-   })
-})
 
-// app.get('/help/*', (req, res) => {
-//     res.render('404', {
-//         title: '404',
-//         name: 'Andrew Mead',
-//         errorMessage: 'Help article not found.'
+// app.get('/player',(req,res) => {
+//     res.render('player',{ 
+//         creator:'Jatin',
+//         loop:5
 //     })
 // })
 
-// app.get('*', (req, res) => {
-//     res.render('404', {
-//         title: '404',
-//         name: 'Andrew Mead',
-//         errorMessage: 'Page not found.'
+// app.get('/player/stats',(req,res)=>{
+//     if (!req.query.name) {
+//         return res.send({ 
+//             error: 'You must provide a name'
+//         })
+//     }
+//     api.playerId(req.query.name, (error, pId) => {
+//         if (error) {
+//             return res.send({ error })
+//         }
+//     api.playerInfo(pId,(error,pdata)=>{
+//         if (error) {
+//             return res.send({ error })
+//         }
+//         res.send({
+//               pdata
+//         })
 //     })
+//    })
 // })
 
 app.listen(port, () => {
